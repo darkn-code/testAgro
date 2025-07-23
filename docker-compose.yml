@@ -1,0 +1,77 @@
+version: '3.9'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./backend:/app
+    environment:
+      - FLASK_ENV=development
+      - DB_HOST=db
+      - DB_PORT=5432
+      - DB_NAME=agro40
+      - DB_USER=postgres
+      - DB_PASSWORD=1234567890
+    depends_on:
+      - db
+    networks:
+      agro_net:
+        ipv4_address: 172.20.0.10
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    stdin_open: true
+    tty: true
+    depends_on:
+      - backend
+    networks:
+      agro_net:
+        ipv4_address: 172.20.0.20
+
+  db:
+    image: postgres:17
+    environment:
+      POSTGRES_DB: agro40
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 1234567890
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      agro_net:
+        ipv4_address: 172.20.0.30
+
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - "8080:80"
+    networks:
+      agro_net:
+        ipv4_address: 172.20.0.40
+    depends_on:
+      - db
+
+volumes:
+  pgdata:
+
+networks:
+  agro_net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/24

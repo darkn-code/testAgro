@@ -1,0 +1,737 @@
+/*estilos generales*/
+html, body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    font-family: sans-serif;
+}
+
+/*estilos para la pagina principal.js*/
+.App {
+  text-align: center;
+  background-image: url('../public/imagenes/agro.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-icono {
+  margin-bottom: -45px;
+  margin-left: 200px;
+  height: 100px;
+  width: 100px;
+  transform: rotate(-10deg);
+}
+
+.title{
+  font-size: 50px;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  font-family:'Times New Roman', Times, serif;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-icono {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+@keyframes App-icono-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/*estilos para la pagina login*/
+.pagina {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url('/public/imagenes/siembra5.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.formulario {
+    background-color: rgba(255, 255, 255, 0.7);;
+    padding: 40px 30px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+}
+
+.titulo {
+    font-size: 32px;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.mb-3 {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input.form-control {
+    width: 100%;
+    padding: 10px 10px 10px 40px;
+    font-size: 16px;
+}
+
+.user {
+    position: absolute;
+    top: 10px;
+    left: -25px;
+    width: 24px;
+}
+
+.password {
+    position: absolute;
+    top: 10px;
+    left: -25px;
+    width: 20px;
+}
+
+.pregunta {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.link {
+    display: inline;
+    color: #007bff;
+    text-decoration: none;
+    margin-left: 5px;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+/*estilos para la pagina de crear cuenta*/
+.mensaje-exito {
+  background-color: #d4edda;
+  color: #155724;
+  font-size: 1.5rem;
+  text-align: center;
+  padding: 20px;
+  margin: 20px auto;
+  border-radius: 10px;
+  max-width: 500px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  animation: aparecer 0.5s ease-in-out;
+}
+
+@keyframes aparecer {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.registro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url('/public/imagenes/siembra7.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    width: 100%;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+    max-height: 90vh;
+    overflow-y: auto;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.formularioRegistro {
+    background-color: rgba(255, 255, 255, 0.7);;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    max-height: 80vh;
+    overflow-y: auto;
+    padding-right: 15px;
+}
+
+
+.titulo2 {
+    font-size: 30px;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.mb-3 {
+    margin-bottom: 20px;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input.form-control {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+}
+
+input.form-control:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+.botones {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn {
+    flex: 1;
+    cursor: pointer;
+}
+
+/*estilos para la pagina de bienvenida ambos perfiles*/
+.principal-bienvenida {
+  background-image: url('/public/imagenes/siembraprincipal.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.menutoggle {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+.menutoggle img {
+  width: 40px;
+}
+
+.sidebar {
+  width: 250px;
+  transition: transform 0.3s ease;
+  transform: translateX(-100%);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: #f8f9fa;
+  z-index: 999;
+  padding: 80px 20px 20px;
+}
+
+.sidebar.active {
+  transform: translateX(0);
+}
+
+.perfil {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.perfil img {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.nombre-usuario {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+
+.nombre-usuario:hover {
+  text-decoration: underline;
+  color: #007bff;
+}
+
+.menulateral {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.engrane, .cerrar_sesion {
+  width: 40px;
+  transition: transform 0.2s ease;
+}
+
+.engrane:hover,
+.cerrar_sesion:hover {
+  transform: scale(1.1);
+}
+
+.bienvenida {
+  margin-top: 80px;
+  text-align: center;
+}
+
+.letrero {
+  font-size: 28px;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 40px;
+}
+
+.secciones {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.seccion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.imagen-seccion {
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+#monitoreo:hover,
+#analisis:hover, #boton:hover {
+  transform: scale(1.1);
+}
+
+.imagen-seccion:hover, .perfil:hover {
+    transform: scale(1.05);
+}
+
+.form-label {
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+}
+
+.foto-perfil {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+/*estilos para la pagina de perfil*/
+.principal-perfil {
+  background-image: url('/public/imagenes/agricultora.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+.contenedor-perfil {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 40px;
+  border-radius: 15px;
+  min-height: 100vh;
+  width: 50%;
+  flex-direction: column;
+  position: relative;
+  margin: 0 auto;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  text-align: center;
+  overflow: hidden;
+}
+
+#regresar-perfil {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+#regresar-perfil:hover {
+  transform: scale(1.1);
+}
+
+.datos-usuario {
+  max-height: 500px;
+  overflow-y: auto;
+  padding-right: 10px;
+  scroll-behavior: smooth;
+}
+
+.ojo {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #555;
+}
+
+.usuario-foto {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+/*estilos para la pagina de monitoreo*/
+.principal-mon {
+  background-image: url('/public/imagenes/siembra6_.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.monitoreo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 40px;
+  border-radius: 15px;
+  min-height: 100vh;
+  width: 50%;
+  flex-direction: column;
+  position: relative;
+  margin: 0 auto;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  text-align: center;
+  overflow: hidden;
+}
+
+.monitoreo-container h2 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+.btn-iniciar {
+  padding: 10px 20px;
+  background-color: green;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-bottom: 30px;
+  transition: background-color 0.3s transform 0.2s;
+}   
+
+.btn-iniciar.activo{
+    background-color: red;
+}
+
+.btn-iniciar:hover {
+    background-color: darkgreen;
+    transform: scale(1.05);
+}
+
+#regresar {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+#regresar:hover {
+  transform: scale(1.1);
+}
+
+p {
+  font-size: 1.1rem;
+  margin-top: 15px;
+}
+
+/*Interfaz de pagina de analisis*/
+.principal-ana {
+  background-image: url('/public/imagenes/siembra4.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.container-analisis {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 40px;
+  border-radius: 15px;
+  min-height: 100vh;
+  width: 50%;
+  flex-direction: column;
+  position: relative;
+  margin: 0 auto;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  text-align: center;
+  overflow: hidden;
+}
+
+#regresar {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+#regresar:hover {
+  transform: scale(1.1);
+}
+
+/*estilos para la pagina de mis cultivos del administrador*/
+.principal-mis {
+  background-image: url('/public/imagenes/siembra.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.contenedor-cultivos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 40px;
+  border-radius: 15px;
+  min-height: 100vh;
+  width: 50%;
+  flex-direction: column;
+  position: relative;
+  margin: 0 auto;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  text-align: center;
+  overflow: hidden;
+}
+
+.tabla-cultivos {
+  overflow-x: auto;
+  width: 100%;
+}
+
+.tabla-cultivos-admin {
+  overflow-x: auto;
+  width: 100%;
+}
+
+#regresar-cultivos {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+#regresar-cultivos:hover {
+  transform: scale(1.1);
+}
+
+.tabla-con-botones {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 20px;
+    min-width: 100%;
+}
+
+.tabla-scroll {
+    overflow-x: auto;
+    max-width: 100%;
+}
+
+.tabla-scroll input {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+}
+
+table {
+    border-collapse: collapse;
+    min-width: max-content;
+    width: 100%;
+}
+
+.tabla-scroll table {
+    font-size: 12px;
+    width: 100%;
+    border-collapse: collapse;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.tabla-scroll th,
+.tabla-scroll td {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ccc;
+}
+
+th, td {
+    padding: 8px;
+    min-width: 150px;
+    text-align: center;
+}
+
+input {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.columna-eliminar {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    padding-top: 10px;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.boton-agregar {
+  background-color: #0080ff;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  min-width: 80px;
+  margin: 5px;
+}
+
+.boton-agregar:hover {
+  background-color: #2e80ff;
+}
+
+.btn-eliminar {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  min-width: 80px;
+  margin: 5px;
+}
+
+.btn-eliminar:hover {
+    background-color: #c0392b;
+}
+
+@media screen and (max-width: 768px) {
+  .tabla-con-botones {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/*Estilos de la pagina de usuarios*/
+.principal-usuarios {
+  background-image: url('/public/imagenes/siembra2.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.cuadro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 40px;
+  border-radius: 15px;
+  min-height: 100vh;
+  width: 50%;
+  flex-direction: column;
+  position: relative;
+  margin: 0 auto;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  text-align: center;
+  overflow: hidden;
+}
+
+.tabla-usuarios {
+  overflow-x: auto;
+  width: 100%;
+}
