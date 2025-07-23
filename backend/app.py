@@ -76,7 +76,6 @@ def add_item():
 #ruta para que los usuarios hagan login
 @app.route('/api/login', methods=['POST'])
 def login():
-    print("Hola")
     data = request.json
     usuario = data.get('usuario')
     contrasena = data.get('contrasena')
@@ -85,7 +84,6 @@ def login():
         return jsonify({'error': 'Faltan datos'}), 400
 
     try:
-        print("Hola")
         conn = get_db_connection()
         cur = conn.cursor()
         cur.execute("SELECT id_usuario, nombre, apellido_paterno, apellido_materno, usuario, contrasena, tipo_usuario FROM usuarios WHERE usuario = %s", (usuario,))
@@ -94,7 +92,7 @@ def login():
         conn.close()
 
         print("Se cerro la base de datos")
-        if user and bcrypt.checkpw(contrasena, user[5]):
+        if user and bcrypt.checkpw(contrasena.encode('utf-8'), user[5].encode('utf-8')):
             user_data = {
                 'id': user[0],
                 'nombre': user[1],
